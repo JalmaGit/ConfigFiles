@@ -1,0 +1,9 @@
+eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/rudolfs-dark.omp.json)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/jalma/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="$PATH:/home/jalma/.cargo/bin"
+
+alias vim='vimx'
