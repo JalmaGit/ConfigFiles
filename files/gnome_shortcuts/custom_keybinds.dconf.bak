@@ -1,0 +1,9 @@
+[custom0]
+binding='<Control><Alt>t'
+command='kitty'
+name='Terminal'
+
+[custom1]
+binding='<Control><Alt>f'
+command='firefox'
+name='Firefox'
