@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'kaarmu/typst.vim'
+Plugin 'jasonccox/vim-wayland-clipboard'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
