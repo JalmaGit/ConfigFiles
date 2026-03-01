@@ -23,6 +23,14 @@ curl -s https://ohmyposh.dev/install.sh | bash -s
 oh-my-posh font install 0xProto
 echo 'eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/rudolfs-dark.omp.json)"' >> ~/.bashrc 
 
+
+echo "Configuring folder structure"
+
+mkdir -p ${HOME}/GitHub
+mkdir -p ${HOME}/PythonEnv
+mkdir -p ${HOME}/PythonEnv/General
+
+
 echo "Moving config files"
 
 echo "kitty..."
@@ -30,7 +38,7 @@ mkdir -p ${HOME}/.config/kitty
 cp -r files/kitty/* ${HOME}/.config/kitty/
 
 echo ".vimrc..."
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 cp files/.vimrc ${HOME}/
 vim +PluginInstall +qall
 
@@ -44,18 +52,11 @@ echo "gnome-keybinds..."
 dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < files/gnome_shortcuts/custom_keybinds.dconf.bak
 dconf load /org/gnome/desktop/wm/keybindings/ < files/gnome_shortcuts/wm-keybindings.dconf.bak
 
-echo "Configuring folder structure"
-
-mkdir -p ${HOME}/GitHub
-mkdir -p ${HOME}/PythonEnv
-mkdir -p ${HOME}/PythonEnv/General
-
+echo "python venv..."
 VENV_PATH="${HOME}/PythonEnv/General"
 python -m venv "${VENV_PATH}"
 $VENV_PATH/bin/pip install --upgrade pip
-$VENV_PATH/bin/pip install -r files/python/requirments.txt 
-
-
+$VENV_PATH/bin/pip install -r files/python/requirements.txt 
 
 
 echo "Installation Complete"

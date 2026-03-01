@@ -11,6 +11,8 @@ print_usage(){
 	echo "  Option 2:"
 	echo "   source run.sh fetch"
 	echo ""
+	echo " 	Option 3: (Synchronize with other devices)"
+	echo "   source run.sh sync"
 }
 
 if [ "$1" = "fetch" ]; then
@@ -19,7 +21,10 @@ if [ "$1" = "fetch" ]; then
 elif [ "$1" = "setup" ]; then
 	echo "Automatic setup and configuration of system will start"
 	source scripts/distro_selector.sh
-else 
+elif [ "$1" = "sync" ]; then
+	echo "synchronizing local files with repo files"
+	source scripts/synchronize_local_files.sh
+else
 	print_usage
 	return
 fi
