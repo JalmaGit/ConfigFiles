@@ -39,12 +39,15 @@ sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 sudo systemctl enable --now docker
 sudo docker run hello-world
 
+sudo dnf install -y  dnf-plugins-core
+sudo dnf copr enable @kicad/kicad-stable -y
+sudo dnf install -y  kicad kicad-packages3d kicad-doc
+
 echo "Configuring folder structure"
 
 mkdir -p ${HOME}/GitHub
 mkdir -p ${HOME}/PythonEnv
 mkdir -p ${HOME}/PythonEnv/General
-
 
 echo "Moving config files"
 
