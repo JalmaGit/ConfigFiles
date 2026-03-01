@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git pull
 
 echo "gnome-keybinds..."
 dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < files/gnome_shortcuts/custom_keybinds.dconf.bak

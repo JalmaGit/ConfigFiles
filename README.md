@@ -1,6 +1,12 @@
 # Config and Autosetup for Linux
 
-This repo is for auto setup and configuration of linux distroes
+This repo contains scripts for auto setup and configuration of linux distroes
+
+## Fetch Local Files and Syncronize
+
+Running `source run.sh fetch` will auto fetch local config files, while running `source run.sh sync` will syncronize local files with the ones in the repo.
+
+**NOTE:** Before fetching and pushing to remote, either create new branch or pull from remote.
 
 ## Autosetup
 
