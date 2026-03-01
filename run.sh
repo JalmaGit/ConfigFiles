@@ -11,8 +11,9 @@ print_usage(){
 	echo "  Option 2:"
 	echo "   source run.sh fetch"
 	echo ""
-	echo " 	Option 3: (Synchronize with other devices)"
+	echo "  Option 3: (Synchronize with other devices)"
 	echo "   source run.sh sync"
+	echo ""
 }
 
 if [ "$1" = "fetch" ]; then

@@ -32,7 +32,7 @@ sudo dnf install -y xorg-x11-drv-nvidia-cuda
 sudo dnf install -y kitty
 curl -s https://ohmyposh.dev/install.sh | bash -s
 oh-my-posh font install 0xProto
-echo 'eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/rudolfs-dark.omp.json)"' >> ~/.bashrc 
+echo 'eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/rudolfs-dark.omp.json)"' >> ${HOME}/.bashrc 
 
 sudo dnf remove -y docker \
                   docker-client \
@@ -55,6 +55,9 @@ sudo dnf copr enable @kicad/kicad-stable -y
 sudo dnf install -y  kicad kicad-packages3d kicad-doc
 
 wget "https://github.com/bambulab/BambuStudio/releases/download/v02.05.00.67/Bambu_Studio_linux_fedora-v02.05.00.66.AppImage" ${HOME}/Programs/ 
+
+cargo install --locked typst-cli
+echo '"export PATH="$PATH:/home/jalma/.cargo/bin"' >> $HOME/.bashrc
 
 echo "Moving config files"
 
