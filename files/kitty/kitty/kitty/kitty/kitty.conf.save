@@ -43,7 +43,8 @@ map ctrl+shift+p next_tab
 map ctrl+shift+o previous_tab
 
 map ctrl+shift+m new_window_with_cwd
-map ctrl+shift+j new_tab_with_cwd
+
+
 
 #: kitty does not support BIDI (bidirectional text), however, for RTL
 #: scripts, words are automatically displayed in RTL. That is to say,
