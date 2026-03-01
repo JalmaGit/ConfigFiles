@@ -1,5 +1,16 @@
 #!/bin/bash
 
+WORK_DIR="${PWD}"
+
+echo "Configuring folder structure"
+
+mkdir -p ${HOME}/GitHub
+mkdir -p ${HOME}/PythonEnv
+mkdir -p ${HOME}/PythonEnv/General
+mkdir -p ${HOME}/KiCad
+mkdir -p ${HOME}/Programs
+
+
 echo "Starting with installation"
 sleep 0.5
 
@@ -10,7 +21,7 @@ sudo dnf update -y
 
 sudo dnf install -y gcc g++ make automake cmake kernel-devel \
 										rust cargo rustfmt clippy rust-src \
-										git vim vim-default-editor neovim \
+										git vim vim-default-editor neovim wget \
 										python3-devel \
 										steam discord \
 										xbuild go node npm \
@@ -43,11 +54,7 @@ sudo dnf install -y  dnf-plugins-core
 sudo dnf copr enable @kicad/kicad-stable -y
 sudo dnf install -y  kicad kicad-packages3d kicad-doc
 
-echo "Configuring folder structure"
-
-mkdir -p ${HOME}/GitHub
-mkdir -p ${HOME}/PythonEnv
-mkdir -p ${HOME}/PythonEnv/General
+wget "https://github.com/bambulab/BambuStudio/releases/download/v02.05.00.67/Bambu_Studio_linux_fedora-v02.05.00.66.AppImage" ${HOME}/Programs/ 
 
 echo "Moving config files"
 
@@ -60,11 +67,14 @@ git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle
 cp files/.vimrc ${HOME}/
 vim +PluginInstall +qall
 
-WORK_DIR="${PWD}"
-cd ${HOME}/.vim/bundle/YouCompleteMe
-./install.py --all
-cd ${WORK_DIR}
-vim +PluginInstall +qall
+if [[ ! -d ${HOME}/.vim/bundle/YouCompleteMe ]]; then
+	cd ${HOME}/.vim/bundle/YouCompleteMe
+	./install.py --all
+	cd ${WORK_DIR}
+	vim +PluginInstall +qall
+else
+	echo "ymc is satisfied, nothing to do"
+fi
 
 echo "gnome-keybinds..."
 dconf load /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/ < files/gnome_shortcuts/custom_keybinds.dconf.bak
