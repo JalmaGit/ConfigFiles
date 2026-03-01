@@ -9,7 +9,7 @@ dconf load /org/gnome/desktop/wm/keybindings/ < files/gnome_shortcuts/wm-keybind
 
 echo "kitty..."
 mkdir -p ${HOME}/.config/kitty
-cp -r files/kitty/* ${HOME}/.config/kitty/
+cp -r files/kitty/ ${HOME}/.config/
 
 
 echo ".vimrc..."

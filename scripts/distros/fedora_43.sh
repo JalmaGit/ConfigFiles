@@ -60,7 +60,7 @@ echo "Moving config files"
 
 echo "kitty..."
 mkdir -p ${HOME}/.config/kitty
-cp -r files/kitty/* ${HOME}/.config/kitty/
+cp -r files/kitty/ ${HOME}/.config/
 
 echo ".vimrc..."
 git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim

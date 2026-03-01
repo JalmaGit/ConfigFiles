@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Kitty Configs..."
-cp -r ${HOME}/.config/kitty/ files/kitty/
+cp -r ${HOME}/.config/kitty/ files/
 
 echo ".vimrc..."
 cp -r ${HOME}/.vimrc files/
