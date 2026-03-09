@@ -20,11 +20,11 @@ sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-non
 sudo dnf update -y
 
 sudo dnf install -y gcc g++ make automake cmake kernel-devel \
-										rust cargo rustfmt clippy rust-src \
-										git vim vim-default-editor neovim wget \
-										python3-devel \
-										steam discord \
-										xbuild go node npm \
+			rust cargo rustfmt clippy rust-src \
+			git vim vim-default-editor neovim wget \
+			python3-devel \
+			steam discord \
+			xbuild go node npm 
 
 sudo dnf install -y akmod-nvidia-open
 sudo dnf install -y xorg-x11-drv-nvidia-cuda
