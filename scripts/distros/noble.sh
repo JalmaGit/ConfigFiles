@@ -2,7 +2,10 @@
 
 WORK_DIR="${PWD}"
 
+
 echo "Configuring folder structure"
+
+sleep 2
 
 mkdir -p ${HOME}/GitHub
 mkdir -p ${HOME}/PythonEnv
@@ -61,7 +64,7 @@ oh-my-posh font install 0xProto
 echo 'eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/rudolfs-dark.omp.json)"' >> ${HOME}/.bashrc
 
 cargo install --locked typst-cli
-echo 'export PATH="$PATH:/home/jalma/.cargo/bin' >> $HOME/.bashrc
+echo 'export PATH="$PATH:${HOME}/.cargo/bin"' >> $HOME/.bashrc
 
 echo "Moving config files"
 

@@ -6,7 +6,8 @@ echo "Detected: ${linux_distro}"
 
 case ${linux_distro} in
 	"Ubuntu Linux 22.04 (Jammy Jellyfish)") echo "Coming Soon...";;
-	"Linux Mint 22.2") source scripts/distros/mint_22.sh;;
+	"Ubuntu Linux 24.04 (Noble Numbat)") source scripts/distros/noble.sh;;
+	"Linux Mint 22"*) source scripts/distros/noble.sh;;
 	"Fedora Linux 43 (Workstation Edition)") source scripts/distros/fedora_43.sh;;
 	*) echo "Unsupported distribution: ${linux_distro}";;
 esac

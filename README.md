@@ -2,6 +2,8 @@
 
 This repo contains scripts for auto setup and configuration of linux distroes
 
+The main text editor used is Vim, alongside kitty as the terminal emulator. This means that inbetween systems the most important files to syncronize are vim, kitty and python.
+
 ## Fetch Local Files and Syncronize
 
 Running `source run.sh fetch` will auto fetch local config files, while running `source run.sh sync` will syncronize local files with the ones in the repo.
@@ -10,12 +12,14 @@ Running `source run.sh fetch` will auto fetch local config files, while running 
 
 ## Autosetup
 
-The script will autoinstall a bunch of programs and configure the system how I like it. This means that currently the only supported linux distros are the following:
+The goal of this part of the script is to be able to automaticlay setup and configure a new system install the way I like it. simply run `source run.sh setup` and it will automatically setup the new system
+
+Supported distroes for automatic install and setup of software is the following,
 
 - Fedora 43
+- Ubuntu 24.04
+- Mint 22.x 
 - Ubuntu 22.04 (Comming Soon)
-- Ubuntu 24.04 (Comming Soon)
-- Mint 22.x (Comming Soon)
 
 Whilst the following is a list of the most important software installed and configurations added:
 
