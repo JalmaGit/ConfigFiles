@@ -54,17 +54,22 @@ if [ "$1" = "fetch" ]; then
 	echo "Fetching local config files"
 	print_starting
 	source scripts/fetch_local_files.sh
+
 elif [ "$1" = "setup" ]; then
 	echo "Automatic setup and configuration of system will start"
 	print_starting
 	source scripts/distro_selector.sh
+	reboot_sequence
+
 elif [ "$1" = "sync" ]; then
 	echo "synchronizing local files with repo files"
 	print_starting
 	source scripts/synchronize_local_files.sh
+
 else
 	print_usage
 	return
+
 fi
 
 
