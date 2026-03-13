@@ -2,6 +2,13 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set clipboard=unnamedplus
 
+let mapleader = ","
+
+" Clipboard mappings
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>Y "+yy
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -15,6 +22,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'kaarmu/typst.vim'
 Plugin 'jasonccox/vim-wayland-clipboard'
+Plugin 'vim-autoformat/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
