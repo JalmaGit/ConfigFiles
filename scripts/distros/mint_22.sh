@@ -54,7 +54,7 @@ sudo add-apt-repository ppa:kicad/kicad-9.0-releases -y
 sudo apt update
 sudo apt install kicad -y
 
-wget "https://github.com/bambulab/BambuStudio/releases/download/v02.05.00.67/Bambu_Studio_ubuntu-24.04_PR-9540.AppImage" ${HOME}/Programs/
+wget "https://github.com/bambulab/BambuStudio/releases/download/v02.05.00.67/Bambu_Studio_ubuntu-24.04_PR-9540.AppImage" -P ${HOME}/Programs/
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
 oh-my-posh font install 0xProto

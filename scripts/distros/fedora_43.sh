@@ -54,7 +54,7 @@ sudo dnf install -y  dnf-plugins-core
 sudo dnf copr enable @kicad/kicad-stable -y
 sudo dnf install -y  kicad kicad-packages3d kicad-doc
 
-wget "https://github.com/bambulab/BambuStudio/releases/download/v02.05.00.67/Bambu_Studio_linux_fedora-v02.05.00.66.AppImage" ${HOME}/Programs/ 
+wget "https://github.com/bambulab/BambuStudio/releases/download/v02.05.00.67/Bambu_Studio_linux_fedora-v02.05.00.66.AppImage" -P ${HOME}/Programs/
 
 cargo install --locked typst-cli
 echo '"export PATH="$PATH:/home/jalma/.cargo/bin"' >> $HOME/.bashrc
