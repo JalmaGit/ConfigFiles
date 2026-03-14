@@ -24,6 +24,8 @@ Plugin 'kaarmu/typst.vim'
 Plugin 'jasonccox/vim-wayland-clipboard'
 Plugin 'vim-autoformat/vim-autoformat'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,4 +44,9 @@ filetype plugin indent on    " required
 "
 set background=dark
 colorscheme gruvbox
+
+let g:airline_theme = 'transparent'
 highlight Normal guibg=NONE ctermbg=NONE
+
+autocmd FileType typst let b:airline_whitespace_disabled = 1
+set termguicolors
