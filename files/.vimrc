@@ -1,14 +1,14 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set clipboard=unnamedplus
+set number
 
 let mapleader = ","
 
 " Clipboard mappings
-noremap <leader>y "+y
-noremap <leader>p "+p
-noremap <leader>Y "+yy
-
+noremap <leader>y "*y
+noremap <leader>p "*p
+noremap <leader>Y "*yy
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -23,6 +23,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'kaarmu/typst.vim'
 Plugin 'jasonccox/vim-wayland-clipboard'
 Plugin 'vim-autoformat/vim-autoformat'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,3 +39,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+set background=dark
+colorscheme gruvbox
+highlight Normal guibg=NONE ctermbg=NONE

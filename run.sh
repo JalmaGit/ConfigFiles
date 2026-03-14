@@ -8,7 +8,7 @@ print_usage(){
 	echo "  Option 1: (NVIDIA GPU Required)"
 	echo "   source run.sh setup"
 	echo ""
-	echo "  Option 2: Use this fetch local files such that they can be pused to remote"
+	echo "  Option 2: Use this fetch local files such that they can be pushed to remote"
 	echo "   source run.sh fetch"
 	echo ""
 	echo "  Option 3: Use this to synchronize local machine with remote"
