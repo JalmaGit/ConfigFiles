@@ -66,19 +66,8 @@ mkdir -p ${HOME}/.config/kitty
 cp -r files/kitty/ ${HOME}/.config/
 
 echo ".vimrc..."
-git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 cp files/.vimrc ${HOME}/
 vim +PluginInstall +qall
-
-#TODO: figure out how to make it detect if ./install.py --all has ran in the past or not
-if [[ -d ${HOME}/.vim/bundle/YouCompleteMe ]]; then
-	cd ${HOME}/.vim/bundle/YouCompleteMe
-	./install.py --all
-	cd ${WORK_DIR}
-	vim +PluginInstall +qall
-else
-	echo "ycm is satisfied, nothing to do"
-fi
 
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
 	echo "gnome-keybinds..."

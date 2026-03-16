@@ -18,7 +18,7 @@ cp -r files/kitty/ ${HOME}/.config/
 
 echo ".vimrc..."
 cp files/.vimrc ${HOME}/
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 if [[ ! -d ${HOME}/.vim/bundle/YouCompleteMe ]]; then
 	WORK_DIR="${PWD}"
