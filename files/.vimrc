@@ -25,7 +25,6 @@ call plug#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plug 'VundleVim/Vundle.vim'
 Plug 'kaarmu/typst.vim'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -47,11 +46,17 @@ call plug#end()
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
+
+
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<cr>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+"autocmd CursorHold * if &filetype != 'typst' | silent call CocActionAsync('doHover') | endif
+autocmd CursorHold * if CocHasProvider('hover') | silent call CocActionAsync('doHover') | endif
+
+let g:ale_disable_lsp = 1
+
 set background=dark
 colorscheme gruvbox
 
@@ -61,3 +66,27 @@ highlight Normal guibg=NONE ctermbg=NONE
 autocmd FileType typst let b:airline_whitespace_disabled = 1
 set termguicolors
 
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+let g:coc_global_extensions = [
+  \ '@yaegassy/coc-pylsp',
+  \ 'coc-json',
+  \ 'coc-git',
+  \ 'coc-clangd',
+  \ 'coc-go',
+  \ 'coc-rust-analyzer',
+  \ 'coc-yaml',
+  \ 'coc-sh',
+  \ 'coc-cmake',
+  \ 'coc-toml',
+  \ 'coc-docker',
+  \ 'coc-xml',
+  \ 'coc-spell-checker',
+  \ ]

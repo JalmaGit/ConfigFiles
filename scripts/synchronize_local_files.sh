@@ -18,16 +18,9 @@ cp -r files/kitty/ ${HOME}/.config/
 
 echo ".vimrc..."
 cp files/.vimrc ${HOME}/
+cp files/coc-settings.json ${HOME}/.vim/
+
 vim +PlugInstall +qall
-
-if [[ ! -d ${HOME}/.vim/bundle/YouCompleteMe ]]; then
-	WORK_DIR="${PWD}"
-	cd ${HOME}/.vim/bundle/YouCompleteMe
-	./install.py --all
-	cd ${WORK_DIR}
-	vim +PluginInstall +qall
-fi
-
 
 echo "python venv..."
 VENV_PATH="${HOME}/PythonEnv/General"

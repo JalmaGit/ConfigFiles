@@ -3,8 +3,9 @@
 echo "Fetching local kitty configs..."
 cp -r ${HOME}/.config/kitty/ files/
 
-echo "Fetching local .vimrc..."
+echo "Fetching local vim configs..."
 cp -r ${HOME}/.vimrc files/
+cp -r ${HOME}/.vim/coc-settings.json files/
 
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
 	echo "Fetching local gnome-keybinds..."

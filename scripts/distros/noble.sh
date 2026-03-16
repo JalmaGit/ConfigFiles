@@ -74,6 +74,7 @@ cp -r files/kitty/ ${HOME}/.config/
 
 echo ".vimrc..."
 cp files/.vimrc ${HOME}/
+cp files/coc-settings.json ${HOME}/.vim/
 vim +PluginInstall +qall
 
 
