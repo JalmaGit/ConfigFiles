@@ -17,4 +17,3 @@ fi
 
 echo "Fetching local python \"General\" venv..."
 ${HOME}/PythonEnv/General/bin/pip freeze > files/python/requirements.txt
-

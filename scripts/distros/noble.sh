@@ -24,7 +24,7 @@ sudo apt install -y gcc g++ make automake cmake linux-headers-$(uname -r) \
                     python3-dev \
                     steam \
                     mono-xbuild golang nodejs npm \
-                    clang-format black cmake-format shfmt
+                    clang-format clang-tidy clangd black cmake-format shfmt
 
 sudo update-alternatives --install /usr/bin/cargo cargo /usr/bin/cargo-1.91 100
 sudo update-alternatives --install /usr/bin/rustc rustc /usr/bin/rustc-1.91 100
@@ -32,7 +32,7 @@ sudo update-alternatives --install /usr/bin/rustc rustc /usr/bin/rustc-1.91 100
 sudo apt remove -y $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
 
 # Add Docker's official GPG key:
-sudo apt update 
+sudo apt update
 sudo apt install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings -y
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -82,7 +82,7 @@ echo "python venv..."
 VENV_PATH="${HOME}/PythonEnv/General"
 python3 -m venv "${VENV_PATH}"
 $VENV_PATH/bin/pip install --upgrade pip
-$VENV_PATH/bin/pip install -r files/python/requirements.txt 
+$VENV_PATH/bin/pip install -r files/python/requirements.txt
 
 
 echo "Installation Complete"
