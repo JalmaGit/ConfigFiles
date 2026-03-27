@@ -23,7 +23,7 @@ sudo apt install -y gcc g++ make automake cmake linux-headers-$(uname -r) \
                     git vim neovim wget kitty \
                     python3-dev python3-venv \
                     mono-xbuild golang nodejs npm \
-                    clang-format clang-tidy clangd black cmake-format shfmt
+                    clang-format clang-tidy clangd black cmake-format shfmt libfuse2t64
 
 rustup default stable
 
@@ -32,7 +32,7 @@ sudo apt remove -y $(dpkg --get-selections docker.io docker-compose docker-compo
 # Add Docker's official GPG key:
 sudo apt update
 sudo apt install -y ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings -y
+sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
