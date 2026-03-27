@@ -21,7 +21,7 @@ sudo apt upgrade -y
 sudo apt install -y gcc g++ make automake cmake linux-headers-$(uname -r) \
                     rust-1.91-all \
                     git vim neovim wget \
-                    python3-dev \
+                    python3-dev python3-venv \
                     steam \
                     mono-xbuild golang nodejs npm \
                     clang-format clang-tidy clangd black cmake-format shfmt
