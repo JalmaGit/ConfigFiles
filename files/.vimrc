@@ -55,7 +55,23 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 "autocmd CursorHold * if &filetype != 'typst' | silent call CocActionAsync('doHover') | endif
 autocmd CursorHold * if CocHasProvider('hover') | silent call CocActionAsync('doHover') | endif
 
+
+"Ale Settings Below
+
 let g:ale_disable_lsp = 1
+
+
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\    'python': ['autopep8'],
+\    'cpp' : ['clang-format']
+\}
+let g:ale_fix_on_save = 1
+
+
+let g:ale_linters = {
+\    'python': ['pycodestyle']
+\}
 
 set background=dark
 colorscheme gruvbox
@@ -65,6 +81,9 @@ highlight Normal guibg=NONE ctermbg=NONE
 
 autocmd FileType typst let b:airline_whitespace_disabled = 1
 set termguicolors
+
+
+" Coc Settings Below
 
 if has('nvim-0.4.0') || has('patch-8.2.0750')
   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
