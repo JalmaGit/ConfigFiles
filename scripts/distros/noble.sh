@@ -25,8 +25,7 @@ sudo apt install -y gcc g++ make automake cmake linux-headers-$(uname -r) \
                     mono-xbuild golang nodejs npm \
                     clang-format clang-tidy clangd black cmake-format shfmt
 
-sudo update-alternatives --install /usr/bin/cargo cargo /usr/bin/cargo-1.91 100
-sudo update-alternatives --install /usr/bin/rustc rustc /usr/bin/rustc-1.91 100
+rustup default stable
 
 sudo apt remove -y $(dpkg --get-selections docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc | cut -f1)
 
