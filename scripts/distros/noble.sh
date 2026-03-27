@@ -20,7 +20,7 @@ sudo apt upgrade -y
 
 sudo apt install -y gcc g++ make automake cmake linux-headers-$(uname -r) \
                     rustup \
-                    git vim neovim wget \
+                    git vim neovim wget kitty \
                     python3-dev python3-venv \
                     mono-xbuild golang nodejs npm \
                     clang-format clang-tidy clangd black cmake-format shfmt
